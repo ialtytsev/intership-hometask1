@@ -6,11 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Notes manager</title>
 </head>
 
 <body>
+    <div class="container">
+        <h2>Notes Table</h2>
+        <table class="notes-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Created</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Dates</th>
+                    <th>
+                        <div class="icon-action icon-archive-light"></div>
+                        <div class="icon-action icon-trash-light"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
 
+
+        <div class="btn-create-note">
+            <button type="button" class="btn btn-create-note">Create Note</button>
+        </div>
+
+        <h2>Archive Table</h2>
+        <table class="notes-table archive-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Created</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Dates</th>
+                    <th>
+                        <div class="icon-action icon-archive-light"></div>
+                        <div class="icon-action icon-trash-light"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Summary Table</h2>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Note Category</th>
+                    <th>Active</th>
+                    <th>Archived</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="modal closed">
+        <h3>Create Note</h3>
+        <button class="close-button" id="close-button">Close</button>
+
+        <form class="add-note-form">
+            <input type="text" id="id" name="id" hidden>
+
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Input note name">
+            </div>
+
+            <div>
+                <label for="category">Category</label>
+                <select name="category" id="category"></select>
+            </div>
+
+            <div>
+                <label for="content">Content</label>
+                <input type="text" id="content" name="content" placeholder="Input content. Date format xx/xx/xxxx">
+            </div>
+
+            <input type="submit" class="btn" value="Create Note">
+        </form>
+    </div>
+    <div class="modal-overlay closed"></div>
 
     <script type="module" src="js/index.js"></script>
 </body>
