@@ -1,4 +1,7 @@
+import editNoteForm from "./editNoteForm.js";
 import setCategoryIcon from "./setCategoryIcon.js";
+import toggleArchiveNote from "./toggleArchiveNote.js";
+import deleteNote from "./deleteNote.js";
 
 HTMLTableRowElement.prototype.addTextTd = function (text) {
   const td = document.createElement("td");
@@ -23,6 +26,31 @@ const renderNotesTable = (tbody, notes) => {
       tr.addTextTd(note.content);
       tr.addTextTd(note.dates.join(""));
 
+      const actionsButtons = ["edit", "archive", "trash"];
+
+      const tdAction = document.createElement("td");
+      actionsButtons.forEach((action) => {
+        const btn = document.createElement("button");
+        btn.id = `${action}-${note.id}`;
+        btn.addEventListener("click", (event) => {
+          switch (action) {
+            case "edit":
+              editNoteForm(event);
+              break;
+            case "archive":
+              toggleArchiveNote(event);
+              break;
+            case "trash":
+              deleteNote(event);
+              break;
+            default:
+              break;
+          }
+        });
+        btn.classList.add("btn-action", `btn-${action}`);
+        tdAction.appendChild(btn);
+      });
+      tr.appendChild(tdAction);
       tbody.appendChild(tr);
     });
   } catch (error) {

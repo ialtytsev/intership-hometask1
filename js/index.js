@@ -1,6 +1,6 @@
 import data from "./data.js";
 import renderActiveNotes from "./renderActiveNotes.js";
-import renderArchievedNotes from "./renderArchivedNotes.js";
+import renderArchivedNotes from "./renderArchivedNotes.js";
 import renderCategoryOptions from "./renderCategoryOptions.js";
 import noteFormSubmit from "./noteFormSubmit.js";
 
@@ -10,4 +10,4 @@ form.addEventListener("submit", noteFormSubmit);
 renderCategoryOptions();
 
 renderActiveNotes(data);
-renderArchievedNotes(data);
+renderArchivedNotes(data);

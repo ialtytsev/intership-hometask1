@@ -183,7 +183,8 @@ table > tbody > tr > td:first-child {
 .notes-table > thead > tr > th:last-child,
 .notes-table > tbody > tr > td:last-child {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 10px;
   gap: 5px;
   flex-grow: 0;
   width: 100px;
